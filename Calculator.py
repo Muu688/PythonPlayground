@@ -4,16 +4,30 @@ class Calculation:
       self.number1 = number1
       self.number2 = number2
       self.operation = operation
-      self.tricks = []    # creates a new empty list for each dog
 
-    def getNumbrer1(self):
-        return self.number1
+    def getNumber1(self):
+      return self.number1
 
-    def getNumbrer2(self):
-        return self.number2
+    def getNumber2(self):
+      return self.number2
 
     def getOperation(self):
-        return self.operation        
+      return self.operation
+
+    def addition(self, number1, number2):
+      return (number1 + number2)
+
+    def multiplication(self, number1, number2):
+      return (number1 * number2)
+
+    def division(self, number1, number2):
+      if(number2==0):
+        return ('Cannot Divide by 0')
+
+      return (number1 / number2)
+
+    def subtraction(self, number1, number2):
+        return (number1 - number2)                           
 
 def isValidOperation(operation):
   validOperations=['/','+','-','*']
@@ -23,7 +37,15 @@ def isValidOperation(operation):
   else:
     return True
 
+def isValidNumber(number1, number2):
+  if(not number1.isnumeric() or not number2.isnumeric()):
+    print('{number1} or {number2} are not valid number(s). Please try a valid input.'.format(number1=number1, number2=number2))
+    return False
+  else:
+    return True
+
 def math(number1, number2, operation):
+  calculator = Calculation(number1, number2, operation)
   try:
     number1=float(number1)
   except:
@@ -34,16 +56,16 @@ def math(number1, number2, operation):
     print('Cannot convert {number2} to a number'.format(number2=number2))
   try:
     if(operation == '/') :
-      output=number1 / number2
+      output=calculator.division(number1, number2)
 
     if(operation == '*') :
-      output=number1 * number2
+      output=calculator.multiplication(number1, number2)
 
     if(operation == '+') :
-      output=number1 + number2
+      output=calculator.addition(number1, number2)
 
     if(operation == '-') :
-      output=number1 - number2
+      output=calculator.subtraction(number1, number2)
 
     print(output)
 
@@ -54,8 +76,9 @@ def math(number1, number2, operation):
 def getInputs():
   operation = ''
   isValidOp = False
+  isValidNum = False
   while not isValidOp:
-    operation=input('Please input the operation (/ * + -) or type -help for help!')
+    operation=input('Please input the operation (/ * + -) or type -help for help!   ')
 
     if(operation == '-help') :
       print('The / indicates division')
@@ -64,15 +87,20 @@ def getInputs():
       print('The - indicates subtraction')
 
     isValidOp = isValidOperation(operation) 
-    number1=input('Please input the first number for your {operation} operation'.format(operation=operation))
-    number2=input('Please input the second number for your {operation} operation'.format(operation=operation))
-    return number1, number2, operation
+
+  while not isValidNum :
+    number1=input('Please input the first number for your {operation} operation   '.format(operation=operation))
+    if(not number1.isnumeric()):
+      print('{number1} is not valid number. Please try a valid input.'.format(number1=number1))
+      continue
+    number2=input('Please input the second number for your {operation} operation   '.format(operation=operation))
+    if(not number2.isnumeric()):
+      print('{number2} is not valid number. Please try a valid input.'.format(number2=number2))
+      continue
+    isValidNum=True # At this point the number is sanitised and is a valid input to perform maths on.
+  return number1, number2, operation
       
 print('Hello... Welcome to the Calculator....')
 
-# print('Math is {number1} {operation} {number2}'.format(operation=operation, number1=number1, number2=number2))
-
 number1, number2, operation = getInputs()
 math(number1, number2, operation)
-
-# calculator = Calculation()
