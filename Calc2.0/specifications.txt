@@ -1,0 +1,11 @@
+Part one:
+
+Create a Calculator that can handle basic operations such as ( / * + - )
+As the calculator can take in Brackets, the calculator must obey BODMAS (Or BOMDAS or whatever it is)
+It needs to be able to accept somewhat complex inputs e.g.
+    (20 + 300) / 300 * 10
+ 
+
+Part Two: Extend this into a Graphical User Interface (GUI) - Refer to: https://realpython.com/python-gui-tkinter/
+    A user should put inputs into the calculator similar to the windows calculator (calc)
+    When the user presses = it should perform the calculation in the window.
