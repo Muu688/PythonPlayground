@@ -1,0 +1,11 @@
+TITLE,LAT,LON,ELEV
+Mt. Feathertop 1922m, -36.894135, 147.138140, 1922
+High Knob, -36.913904, 147.132841, 1802 
+Start of climb to Summit, -36.898469, 147.130751, 1800
+T-Junction of Mt. Feathertop Summit - Federation Hut and Razorback Track, -36.900562, 147.127135, 1750
+Big Dipper,-36.957449, 147.126593, 1650
+Mt Buller,-37.144621, 146.425814, 1600
+Mt Hotham,-36.976011, 147.131866, 1861
+Mt Bogong,-36.732761, 147.305471, 1986
+Mt William,-37.304353, 142.601030, 1617
+
