@@ -1,12 +1,14 @@
 import cv2
 import time
 
+
 # Read the Video
 video=cv2.VideoCapture(0)
 
 a=0
 while True:
     a=a+1
+
     check, frame = video.read()
 
     # print(check)
