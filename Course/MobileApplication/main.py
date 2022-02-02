@@ -31,7 +31,8 @@ class SignUpScreen(Screen):
         self.manager.current = 'sign_up_success_screen'
 
 class SignUpSuccessScreen(Screen):
-    pass
+    def go_to_login(self):
+        self.manager.current = 'login_screen'
 
 class MainApp(App):
     def build(self):

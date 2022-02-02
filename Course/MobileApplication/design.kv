@@ -38,7 +38,10 @@
     GridLayout:
         cols: 1
         Label:
-            text: "Login Page"
+            text: "Sign up successful!"
+        Button:
+            text:"Login Page"
+            on_press: root.go_to_login()
 
         
 
@@ -47,3 +50,5 @@
         name: "login_screen"
     SignUpScreen:
         name: "sign_up_screen"
+    SignUpSuccessScreen:
+        name: "sign_up_success_screen"
